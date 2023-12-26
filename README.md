@@ -47,7 +47,7 @@ ___
     типа счетчик была не в ресурсном try и/или ресурс остался открыт. Значение
     считать в ресурсе try, если при заведении животного заполнены все поля.
 
---- 
+---       
 
 ### Выполнение
 
@@ -56,18 +56,21 @@ ___
       хомяками) и Вьючные животными заполнив файл Лошадьми, верблюдами и
       ослы), а затем объединить их. Просмотреть содержимое созданного файла.
       Переименовать файл, дав ему новое имя (Друзья человека).
-![1.PNG](..%2F..%2FGB%20%F3%F7%B8%E1%E0%2F1.PNG)
+![1](https://github.com/aleksdima01/Pet_repository/assets/118337664/c53123d0-5d18-4579-b461-4d604bf2a6be)
 2. Создать директорию, переместить файл туда.
-![2.PNG](..%2F..%2FGB%20%F3%F7%B8%E1%E0%2F%C8%F2%EE%E3%EE%E2%E0%FF%20%CA%D0%20%EF%EE%20%E1%EB%EE%EA%F3%20%F1%EF%E5%F6%E8%E0%EB%E8%E7%E0%F6%E8%FF%2F2.PNG)
+![2](https://github.com/aleksdima01/Pet_repository/assets/118337664/f3d0bd8d-2095-4c27-8df8-2df59495ac81)
 3. Подключить дополнительный репозиторий MySQL. Установить любой пакет
    из этого репозитория.
-![3.PNG](..%2F..%2FGB%20%F3%F7%B8%E1%E0%2F%C8%F2%EE%E3%EE%E2%E0%FF%20%CA%D0%20%EF%EE%20%E1%EB%EE%EA%F3%20%F1%EF%E5%F6%E8%E0%EB%E8%E7%E0%F6%E8%FF%2F3.PNG)
+![3](https://github.com/aleksdima01/Pet_repository/assets/118337664/9582b803-70cd-445a-9913-6fcffb5429d5)
+![3 1](https://github.com/aleksdima01/Pet_repository/assets/118337664/1ea9be8a-e661-4a06-91cc-ccc589adad68)
+![3 2](https://github.com/aleksdima01/Pet_repository/assets/118337664/cd76501a-c5bf-45c3-892f-733a9c781eab)
 4. Установить и удалить deb-пакет с помощью dpkg
-![4.PNG](..%2F..%2FGB%20%F3%F7%B8%E1%E0%2F%C8%F2%EE%E3%EE%E2%E0%FF%20%CA%D0%20%EF%EE%20%E1%EB%EE%EA%F3%20%F1%EF%E5%F6%E8%E0%EB%E8%E7%E0%F6%E8%FF%2F4.PNG)
+![4](https://github.com/aleksdima01/Pet_repository/assets/118337664/521990c0-f1d8-424c-80b3-990533fd765c)
+![4 1](https://github.com/aleksdima01/Pet_repository/assets/118337664/e809fe8b-0024-41a7-8955-be768114dbd7)
 5. Выложить историю команд в терминале ubuntu
 [История команд](./commands_history.txt)
 6. Нарисовать диаграмму, в которой есть класс родительский класс, домашние
    животные и вьючные животные, в составы которых в случае домашних
    животных войдут классы: собаки, кошки, хомяки, а в класс вьючные животные
    войдут: Лошади, верблюды и ослы).
-![6.PNG](..%2F..%2FGB%20%F3%F7%B8%E1%E0%2F%C8%F2%EE%E3%EE%E2%E0%FF%20%CA%D0%20%EF%EE%20%E1%EB%EE%EA%F3%20%F1%EF%E5%F6%E8%E0%EB%E8%E7%E0%F6%E8%FF%2F6.PNG)
+![6](https://github.com/aleksdima01/Pet_repository/assets/118337664/dd5b9fea-f16d-405b-8970-17a931317153)
