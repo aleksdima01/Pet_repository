@@ -1,0 +1,26 @@
+История команд:
+1.
+cat > home_pets
+dogs cats hamsters
+
+cat > pack_animals
+horses camels donkeys
+
+cat pack_animals home_pets > animals
+
+mv animals people_friends
+
+2.
+mkdir animals_dir
+mv people_friends ./animals_dir/people_friends
+ls -al animals_dir/
+
+3.
+cd Загрузки
+sudo dpkg -i mysql-apt-config_0.8.29-1_all.deb
+sudo apt update
+sudo apt install mysql-server mysql-client
+
+4.
+sudo dpkg -i virtualbox-7.0_7.0.12-159484~Ubuntu~jammy_amd64.deb
+sudo dpkg -r virtualbox-7.0
