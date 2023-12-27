@@ -57,16 +57,20 @@ ___
       ослы), а затем объединить их. Просмотреть содержимое созданного файла.
       Переименовать файл, дав ему новое имя (Друзья человека).
 ![1](https://github.com/aleksdima01/Pet_repository/assets/118337664/c53123d0-5d18-4579-b461-4d604bf2a6be)
+
 2. Создать директорию, переместить файл туда.
 ![2](https://github.com/aleksdima01/Pet_repository/assets/118337664/f3d0bd8d-2095-4c27-8df8-2df59495ac81)
+
 3. Подключить дополнительный репозиторий MySQL. Установить любой пакет
    из этого репозитория.
 ![3](https://github.com/aleksdima01/Pet_repository/assets/118337664/9582b803-70cd-445a-9913-6fcffb5429d5)
 ![3 1](https://github.com/aleksdima01/Pet_repository/assets/118337664/1ea9be8a-e661-4a06-91cc-ccc589adad68)
 ![3 2](https://github.com/aleksdima01/Pet_repository/assets/118337664/cd76501a-c5bf-45c3-892f-733a9c781eab)
+
 4. Установить и удалить deb-пакет с помощью dpkg
 ![4](https://github.com/aleksdima01/Pet_repository/assets/118337664/521990c0-f1d8-424c-80b3-990533fd765c)
 ![4 1](https://github.com/aleksdima01/Pet_repository/assets/118337664/e809fe8b-0024-41a7-8955-be768114dbd7)
+
 5. Выложить историю команд в терминале ubuntu
 [История команд](./commands_history.txt)
 6. Нарисовать диаграмму, в которой есть класс родительский класс, домашние
@@ -74,6 +78,7 @@ ___
    животных войдут классы: собаки, кошки, хомяки, а в класс вьючные животные
    войдут: Лошади, верблюды и ослы).
 ![6](https://github.com/aleksdima01/Pet_repository/assets/118337664/dd5b9fea-f16d-405b-8970-17a931317153)
+
 7.  В подключенном MySQL репозитории создать базу данных “Друзья человека”
 ``` 
 DROP DATABASE IF EXISTS Human_Friends;
@@ -82,6 +87,7 @@ USE Human_Friends;
 ```
 8. Создать таблицы с иерархией из диаграммы в БД
 ![8](https://github.com/aleksdima01/Pet_repository/assets/118337664/2227e1af-46ab-4782-87ef-c8251c7d0bc4)
+
 9. Заполнить низкоуровневые таблицы именами(животных), командами
    которые они выполняют и датами рождения
 ```
@@ -232,6 +238,7 @@ name,birthday,commands
 FROM donkeys;
 ```
 ![10](https://github.com/aleksdima01/Pet_repository/assets/118337664/be011777-bce8-4aaf-8401-5552fc35d862)
+
 11. Создать новую таблицу “молодые животные” в которую попадут все
 животные старше 1 года, но младше 3 лет и в отдельном столбце с точностью
 до месяца подсчитать возраст животных в новой таблице
@@ -256,6 +263,7 @@ WHERE TIMESTAMPDIFF(MONTH, birthday, CURDATE()) BETWEEN 12 AND 35;
 SELECT * FROM ages
 ```
 ![11](https://github.com/aleksdima01/Pet_repository/assets/118337664/365d20e2-9397-40f6-86c6-c865bbdffdad)
+
 12. Объединить все таблицы в одну, при этом сохраняя поля, указывающие на
     прошлую принадлежность к старым таблицам.
 ```
@@ -285,4 +293,5 @@ LEFT JOIN ages ON ages.name = donkeys.name
 LEFT JOIN packed_animals pa ON pa.Id = donkeys.class_id;
 ```
 ![12](https://github.com/aleksdima01/Pet_repository/assets/118337664/08c45a5d-a955-4c71-bfda-8bc58988e87b)
+
 13. Создать класс с Инкапсуляцией методов и наследованием по диаграмме.
