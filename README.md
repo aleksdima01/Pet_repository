@@ -81,7 +81,7 @@ CREATE DATABASE Human_Friends;
 USE Human_Friends;
 ```
 8. Создать таблицы с иерархией из диаграммы в БД
-   ![img]()
+![8](https://github.com/aleksdima01/Pet_repository/assets/118337664/2227e1af-46ab-4782-87ef-c8251c7d0bc4)
 9. Заполнить низкоуровневые таблицы именами(животных), командами
    которые они выполняют и датами рождения
 ```
@@ -231,7 +231,7 @@ SELECT
 name,birthday,commands
 FROM donkeys;
 ```
-![img]()
+![10](https://github.com/aleksdima01/Pet_repository/assets/118337664/be011777-bce8-4aaf-8401-5552fc35d862)
 11. Создать новую таблицу “молодые животные” в которую попадут все
 животные старше 1 года, но младше 3 лет и в отдельном столбце с точностью
 до месяца подсчитать возраст животных в новой таблице
@@ -255,7 +255,7 @@ WHERE TIMESTAMPDIFF(MONTH, birthday, CURDATE()) BETWEEN 12 AND 35;
 
 SELECT * FROM ages
 ```
-![img]()
+![11](https://github.com/aleksdima01/Pet_repository/assets/118337664/365d20e2-9397-40f6-86c6-c865bbdffdad)
 12. Объединить все таблицы в одну, при этом сохраняя поля, указывающие на
     прошлую принадлежность к старым таблицам.
 ```
@@ -284,4 +284,5 @@ FROM donkeys
 LEFT JOIN ages ON ages.name = donkeys.name
 LEFT JOIN packed_animals pa ON pa.Id = donkeys.class_id;
 ```
+![12](https://github.com/aleksdima01/Pet_repository/assets/118337664/08c45a5d-a955-4c71-bfda-8bc58988e87b)
 13. Создать класс с Инкапсуляцией методов и наследованием по диаграмме.
