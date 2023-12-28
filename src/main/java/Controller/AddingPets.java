@@ -2,19 +2,20 @@ package Controller;
 
 import Model.*;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class AddingPets {
     String name;
-    Date formatbirthDate;
+    String formatbirthDate;
+    LocalDate parsedate;
     String birthDate;
-    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+    DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH);
     String commands;
-    static Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
     ListPets listPets = new ListPets();
 
     public void addPet() {
@@ -25,11 +26,10 @@ public class AddingPets {
         boolean b = true;
         while (b) {
             try {
-                formatbirthDate = formatter.parse(birthDate);
-                System.out.println(formatter.format(formatbirthDate));
-                System.out.println();
+                parsedate = LocalDate.parse(birthDate,dtf);
+                formatbirthDate=dtf.format(parsedate);
                 b = false;
-            } catch (ParseException e) {
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
                 System.out.println("Повторите ввод даты в правильном формате!");
                 birthDate = scanner.nextLine();
@@ -44,6 +44,7 @@ public class AddingPets {
         System.out.println("4 - Лошадь");
         System.out.println("5 - Верблюд");
         System.out.println("6 - Осёл");
+        scanner.useLocale(Locale.US);
         while (!scanner.hasNextDouble() && !scanner.hasNextInt()) {
             System.out.println("Введите число!");
             scanner.nextLine();
@@ -87,6 +88,10 @@ public class AddingPets {
                 Donkeys donkey = new Donkeys(name, formatbirthDate, commands);
                 listPets.addPet(donkey);
                 break;
+            default:
+                System.out.println("Таких животных у нас нет,\nповторите попытку создания животного.");
+                System.out.println(" ");
+                break;
         }
     }
 
@@ -94,7 +99,16 @@ public class AddingPets {
         return listPets;
     }
 
+
     public void printListPets() {
         listPets.getListPets();
+    }
+    public void getPetCommands(Integer num){
+        System.out.println("Команды:"+listPets.getCommand(num));
+        System.out.println(" ");
+    }
+    public void addPetCommands(Integer num,String command){
+        System.out.println("Команды:"+listPets.getModifyCommand(num,command));
+        System.out.println(" ");
     }
 }

@@ -3,7 +3,7 @@ package Model;
 import java.util.Date;
 
 public class Horses extends Packed_animals {
-    public Horses(String name, Date birthDate, String commands) {
+    public Horses(String name, String birthDate, String commands) {
         super(name, birthDate, commands);
     }
 
@@ -12,7 +12,7 @@ public class Horses extends Packed_animals {
         return "Horse{" +
                 "name='" + name + '\'' +
                 ", birthDate='" + birthDate + '\'' +
-                ", commands='" + commands + '\'' +
+               // ", commands='" + commands + '\'' +
                 '}';
     }
 }

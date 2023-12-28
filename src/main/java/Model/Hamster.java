@@ -3,7 +3,7 @@ package Model;
 import java.util.Date;
 
 public class Hamster extends Home_animals {
-    public Hamster(String name, Date birthDate, String commands) {
+    public Hamster(String name, String birthDate, String commands) {
         super(name, birthDate, commands);
     }
 
@@ -12,7 +12,7 @@ public class Hamster extends Home_animals {
         return "Hamster{" +
                 "name='" + name + '\'' +
                 ", birthDate='" + birthDate + '\'' +
-                ", commands='" + commands + '\'' +
+               // ", commands='" + commands + '\'' +
                 '}';
     }
 }

@@ -1,8 +1,6 @@
 package Controller;
 
-import Model.Cat;
-import Model.Donkeys;
-import Model.Pet;
+
 import View.Menu;
 
 public class Main {

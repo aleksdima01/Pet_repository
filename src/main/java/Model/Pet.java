@@ -5,11 +5,11 @@ import java.util.Date;
 
 public abstract class Pet {
     String name;
-    Date birthDate;
+    String birthDate;
 
     String commands;
 
-    public Pet(String name, Date birthDate, String commands) {
+    public Pet(String name, String birthDate, String commands) {
         this.name = name;
         this.birthDate = birthDate;
         this.commands = commands;
@@ -27,11 +27,11 @@ public abstract class Pet {
         this.name = name;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -48,7 +48,7 @@ public abstract class Pet {
         return "Pet{" +
                 "name='" + name + '\'' +
                 ", birthDate='" + birthDate + '\'' +
-                ", commands='" + commands + '\'' +
+               // ", commands='" + commands + '\'' +
                 '}';
     }
 }
