@@ -151,3 +151,47 @@ FROM donkeys;
 #до месяца подсчитать возраст животных в новой таблице
 
 
+DROP TABLE IF EXISTS ages; 
+CREATE TABLE ages AS
+SELECT name,birthday,commands, TIMESTAMPDIFF(MONTH, birthday, CURDATE()) as age_in_month FROM dogs
+WHERE TIMESTAMPDIFF(MONTH, birthday, CURDATE()) BETWEEN 12 AND 35
+UNION
+SELECT name,birthday,commands, TIMESTAMPDIFF(MONTH, birthday, CURDATE()) as age_in_month FROM cats
+WHERE TIMESTAMPDIFF(MONTH, birthday, CURDATE()) BETWEEN 12 AND 35
+UNION
+SELECT name,birthday,commands, TIMESTAMPDIFF(MONTH, birthday, CURDATE()) as age_in_month FROM hamsters
+WHERE TIMESTAMPDIFF(MONTH, birthday, CURDATE()) BETWEEN 12 AND 35
+UNION
+SELECT name,birthday,commands, TIMESTAMPDIFF(MONTH, birthday, CURDATE()) as age_in_month FROM horses
+WHERE TIMESTAMPDIFF(MONTH, birthday, CURDATE()) BETWEEN 12 AND 35
+UNION
+SELECT name,birthday,commands, TIMESTAMPDIFF(MONTH, birthday, CURDATE()) as age_in_month FROM donkeys
+WHERE TIMESTAMPDIFF(MONTH, birthday, CURDATE()) BETWEEN 12 AND 35;
+
+SELECT * FROM ages;
+
+
+SELECT dogs.name, dogs.birthday, dogs.commands, ha.animal_name, ages.age_in_month 
+FROM dogs
+LEFT JOIN ages ON ages.name = dogs.name
+LEFT JOIN home_animals ha ON ha.Id = dogs.class_id
+UNION
+SELECT cats.name, cats.birthday, cats.commands, ha.animal_name, ages.age_in_month 
+FROM cats
+LEFT JOIN ages ON ages.name = cats.name
+LEFT JOIN home_animals ha ON ha.Id = cats.class_id
+UNION
+SELECT ham.name, ham.birthday, ham.commands, ha.animal_name, ages.age_in_month 
+FROM hamsters ham
+LEFT JOIN ages ON ages.name = ham.name
+LEFT JOIN home_animals ha ON ha.Id = ham.class_id
+UNION
+SELECT horses.name, horses.birthday, horses.commands, pa.animal_name, ages.age_in_month 
+FROM horses 
+LEFT JOIN ages ON ages.name = horses.name
+LEFT JOIN packed_animals pa ON pa.Id = horses.class_id
+UNION 
+SELECT donkeys.name, donkeys.birthday, donkeys.commands, pa.animal_name, ages.age_in_month 
+FROM donkeys 
+LEFT JOIN ages ON ages.name = donkeys.name
+LEFT JOIN packed_animals pa ON pa.Id = donkeys.class_id;

@@ -5,20 +5,30 @@ import Model.Pet;
 import java.util.ArrayList;
 
 public class ListPets {
-    ArrayList<Pet> pets;
+    ArrayList<Pet> pets = new ArrayList<>();
 
-    public ListPets(ArrayList<Pet> pets) {
-        this.pets = pets;
-    }
-    public void addPet(Pet pet){
+    public void addPet(Pet pet) {
         pets.add(pet);
     }
-    public Pet getPet(String name){
-        Pet resultPet=null;
-        for (Pet el:pets) {
+
+    public Pet getPet(String name) {
+        Pet resultPet = null;
+        for (Pet el : pets) {
             if (el.getName().equals(name))
-                     resultPet=el;
+                resultPet = el;
         }
         return resultPet;
+    }
+
+    public void getListPets() {
+        pets.forEach(System.out::println);
+        System.out.println(" ");
+    }
+
+    @Override
+    public String toString() {
+        return "ListPets{" +
+                pets +
+                '}';
     }
 }

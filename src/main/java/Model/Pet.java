@@ -1,13 +1,15 @@
 package Model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public abstract class Pet {
     String name;
-    String birthDate;
+    Date birthDate;
+
     String commands;
 
-    public Pet(String name, String birthDate, String commands) {
+    public Pet(String name, Date birthDate, String commands) {
         this.name = name;
         this.birthDate = birthDate;
         this.commands = commands;
@@ -25,11 +27,11 @@ public abstract class Pet {
         this.name = name;
     }
 
-    public String getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 
