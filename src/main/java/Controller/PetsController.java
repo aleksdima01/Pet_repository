@@ -8,12 +8,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class AddingPets {
+public class PetsController {
     String name;
     String formatbirthDate;
     LocalDate parsedate;
     String birthDate;
-    DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH);
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH);
     String commands;
     Scanner scanner = new Scanner(System.in);
     ListPets listPets = new ListPets();
@@ -26,8 +26,8 @@ public class AddingPets {
         boolean b = true;
         while (b) {
             try {
-                parsedate = LocalDate.parse(birthDate,dtf);
-                formatbirthDate=dtf.format(parsedate);
+                parsedate = LocalDate.parse(birthDate, dtf);
+                formatbirthDate = dtf.format(parsedate);
                 b = false;
             } catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -103,12 +103,14 @@ public class AddingPets {
     public void printListPets() {
         listPets.getListPets();
     }
-    public void getPetCommands(Integer num){
-        System.out.println("Команды:"+listPets.getCommand(num));
+
+    public void getPetCommands(Integer num) {
+        System.out.println("Команды:" + listPets.getCommand(num));
         System.out.println(" ");
     }
-    public void addPetCommands(Integer num,String command){
-        System.out.println("Команды:"+listPets.getModifyCommand(num,command));
+
+    public void addPetCommands(Integer num, String command) {
+        System.out.println("Команды:" + listPets.getModifyCommand(num, command));
         System.out.println(" ");
     }
 }
