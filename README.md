@@ -52,44 +52,47 @@ ___
 ### Выполнение
 
 1. Используя команду cat в терминале операционной системы Linux, создать
-      два файла Домашние животные (заполнив файл собаками, кошками,
-      хомяками) и Вьючные животными заполнив файл Лошадьми, верблюдами и
-      ослы), а затем объединить их. Просмотреть содержимое созданного файла.
-      Переименовать файл, дав ему новое имя (Друзья человека).
-![1](https://github.com/aleksdima01/Pet_repository/assets/118337664/c53123d0-5d18-4579-b461-4d604bf2a6be)
+   два файла Домашние животные (заполнив файл собаками, кошками,
+   хомяками) и Вьючные животными заполнив файл Лошадьми, верблюдами и
+   ослы), а затем объединить их. Просмотреть содержимое созданного файла.
+   Переименовать файл, дав ему новое имя (Друзья человека).
+   ![1](https://github.com/aleksdima01/Pet_repository/assets/118337664/c53123d0-5d18-4579-b461-4d604bf2a6be)
 
 2. Создать директорию, переместить файл туда.
-![2](https://github.com/aleksdima01/Pet_repository/assets/118337664/f3d0bd8d-2095-4c27-8df8-2df59495ac81)
+   ![2](https://github.com/aleksdima01/Pet_repository/assets/118337664/f3d0bd8d-2095-4c27-8df8-2df59495ac81)
 
 3. Подключить дополнительный репозиторий MySQL. Установить любой пакет
    из этого репозитория.
-![3](https://github.com/aleksdima01/Pet_repository/assets/118337664/9582b803-70cd-445a-9913-6fcffb5429d5)
-![3 1](https://github.com/aleksdima01/Pet_repository/assets/118337664/1ea9be8a-e661-4a06-91cc-ccc589adad68)
-![3 2](https://github.com/aleksdima01/Pet_repository/assets/118337664/cd76501a-c5bf-45c3-892f-733a9c781eab)
+   ![3](https://github.com/aleksdima01/Pet_repository/assets/118337664/9582b803-70cd-445a-9913-6fcffb5429d5)
+   ![3 1](https://github.com/aleksdima01/Pet_repository/assets/118337664/1ea9be8a-e661-4a06-91cc-ccc589adad68)
+   ![3 2](https://github.com/aleksdima01/Pet_repository/assets/118337664/cd76501a-c5bf-45c3-892f-733a9c781eab)
 
 4. Установить и удалить deb-пакет с помощью dpkg
-![4](https://github.com/aleksdima01/Pet_repository/assets/118337664/521990c0-f1d8-424c-80b3-990533fd765c)
-![4 1](https://github.com/aleksdima01/Pet_repository/assets/118337664/e809fe8b-0024-41a7-8955-be768114dbd7)
+   ![4](https://github.com/aleksdima01/Pet_repository/assets/118337664/521990c0-f1d8-424c-80b3-990533fd765c)
+   ![4 1](https://github.com/aleksdima01/Pet_repository/assets/118337664/e809fe8b-0024-41a7-8955-be768114dbd7)
 
 5. Выложить историю команд в терминале ubuntu
-[История команд](./commands_history.txt)
+   [История команд](./commands_history.txt)
 6. Нарисовать диаграмму, в которой есть класс родительский класс, домашние
    животные и вьючные животные, в составы которых в случае домашних
    животных войдут классы: собаки, кошки, хомяки, а в класс вьючные животные
    войдут: Лошади, верблюды и ослы).
-![6](https://github.com/aleksdima01/Pet_repository/assets/118337664/dd5b9fea-f16d-405b-8970-17a931317153)
+   ![6](https://github.com/aleksdima01/Pet_repository/assets/118337664/dd5b9fea-f16d-405b-8970-17a931317153)
 
-7.  В подключенном MySQL репозитории создать базу данных “Друзья человека”
+7. В подключенном MySQL репозитории создать базу данных “Друзья человека”
+
 ``` 
 DROP DATABASE IF EXISTS Human_Friends;
 CREATE DATABASE Human_Friends;
 USE Human_Friends;
 ```
+
 8. Создать таблицы с иерархией из диаграммы в БД
-![8](https://github.com/aleksdima01/Pet_repository/assets/118337664/2227e1af-46ab-4782-87ef-c8251c7d0bc4)
+   ![8](https://github.com/aleksdima01/Pet_repository/assets/118337664/2227e1af-46ab-4782-87ef-c8251c7d0bc4)
 
 9. Заполнить низкоуровневые таблицы именами(животных), командами
    которые они выполняют и датами рождения
+
 ```
 DROP TABLE IF EXISTS pets;
 CREATE TABLE pets
@@ -225,9 +228,11 @@ INSERT INTO donkeys (name, birthday, commands, class_id)
 VALUES ('Eeyore', '2017-09-18', 'Walk, Carry Load, Bray', 3),
 ('Burro', '2019-01-23', 'Walk, Bray, Kick', 3);
 ```
+
 10. Удалить из таблицы верблюдов, т.к. верблюдов решили перевезти в другой
-питомник на зимовку. Объединить таблицы лошади, и ослы в одну таблицу.  
-```DROP TABLE camels;```
+    питомник на зимовку. Объединить таблицы лошади, и ослы в одну таблицу.  
+    ```DROP TABLE camels;```
+
 ```
 SELECT
 name,birthday,commands
@@ -237,11 +242,13 @@ SELECT
 name,birthday,commands
 FROM donkeys;
 ```
+
 ![10](https://github.com/aleksdima01/Pet_repository/assets/118337664/be011777-bce8-4aaf-8401-5552fc35d862)
 
 11. Создать новую таблицу “молодые животные” в которую попадут все
-животные старше 1 года, но младше 3 лет и в отдельном столбце с точностью
-до месяца подсчитать возраст животных в новой таблице
+    животные старше 1 года, но младше 3 лет и в отдельном столбце с точностью
+    до месяца подсчитать возраст животных в новой таблице
+
 ```
 DROP TABLE IF EXISTS ages; 
 CREATE TABLE ages AS
@@ -262,10 +269,12 @@ WHERE TIMESTAMPDIFF(MONTH, birthday, CURDATE()) BETWEEN 12 AND 35;
 
 SELECT * FROM ages
 ```
+
 ![11](https://github.com/aleksdima01/Pet_repository/assets/118337664/365d20e2-9397-40f6-86c6-c865bbdffdad)
 
 12. Объединить все таблицы в одну, при этом сохраняя поля, указывающие на
     прошлую принадлежность к старым таблицам.
+
 ```
 SELECT dogs.name, dogs.birthday, dogs.commands, ha.animal_name, ages.age_in_month 
 FROM dogs
@@ -292,9 +301,12 @@ FROM donkeys
 LEFT JOIN ages ON ages.name = donkeys.name
 LEFT JOIN packed_animals pa ON pa.Id = donkeys.class_id;
 ```
+
 ![12](https://github.com/aleksdima01/Pet_repository/assets/118337664/08c45a5d-a955-4c71-bfda-8bc58988e87b)
 
 13. Создать класс с Инкапсуляцией методов и наследованием по диаграмме.
+    ![13]()
+
 14. Написать программу, имитирующую работу реестра домашних животных.
     В программе должен быть реализован следующий функционал:  
     14.1 Завести новое животное  
@@ -302,9 +314,3 @@ LEFT JOIN packed_animals pa ON pa.Id = donkeys.class_id;
     14.3 Увидеть список команд, которое выполняет животное  
     14.4 Обучить животное новым командам  
     14.5 Реализовать навигацию по меню
-15. Создайте класс Счетчик, у которого есть метод add(), увеличивающий̆
-    значение внутренней̆ int переменной̆ на 1 при нажатии “Завести новое
-    животное” Сделайте так, чтобы с объектом такого типа можно было работать в
-    блоке try-with-resources. Нужно бросить исключение, если работа с объектом
-    типа счетчик была не в ресурсном try и/или ресурс остался открыт. Значение
-    считать в ресурсе try, если при заведении животного заполнены все поля.
