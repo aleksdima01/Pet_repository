@@ -301,11 +301,10 @@ FROM donkeys
 LEFT JOIN ages ON ages.name = donkeys.name
 LEFT JOIN packed_animals pa ON pa.Id = donkeys.class_id;
 ```
-
 ![12](https://github.com/aleksdima01/Pet_repository/assets/118337664/08c45a5d-a955-4c71-bfda-8bc58988e87b)
 
 13. Создать класс с Инкапсуляцией методов и наследованием по диаграмме.
-    ![13]()
+    ![13](https://github.com/aleksdima01/Pet_repository/assets/118337664/e34c5eec-bda2-4f81-b296-a5da119944c0)
 
 14. Написать программу, имитирующую работу реестра домашних животных.
     В программе должен быть реализован следующий функционал:  
@@ -314,3 +313,5 @@ LEFT JOIN packed_animals pa ON pa.Id = donkeys.class_id;
     14.3 Увидеть список команд, которое выполняет животное  
     14.4 Обучить животное новым командам  
     14.5 Реализовать навигацию по меню
+[Репозиторий](https://github.com/aleksdima01/Pet_repository.git)
+
